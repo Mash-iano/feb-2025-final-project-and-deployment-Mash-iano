@@ -58,22 +58,4 @@ if (form) {
     document.getElementById("formStatus").textContent = "Message sent successfully!";
     this.reset();
   });
-
-// Portfolio Filter
-const filterButtons = document.querySelectorAll('.filter-btn');
-const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-filterButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const category = button.getAttribute('data-category');
-
-    filterButtons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-
-    portfolioItems.forEach(item => {
-      item.style.display = category === 'all' || item.classList.contains(category)
-        ? 'block' : 'none';
-    });
-  });
-});
 }
