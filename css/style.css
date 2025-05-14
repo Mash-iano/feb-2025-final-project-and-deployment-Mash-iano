@@ -1,3 +1,4 @@
+/*Root Variables*/
 :root {
   --primary: #8b5cf6;
   --secondary: #ec4899;
@@ -5,8 +6,10 @@
   --bg: #f9fafb;
   --text: #1f2937;
   --white: #ffffff;
+  --card-bg: #ffffff;
 }
 
+/* Base Styles*/
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
@@ -14,8 +17,10 @@ body {
   background-color: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
 }
 
+/*Header and Navigation*/
 header {
   background: linear-gradient(to right, var(--primary), var(--secondary));
   padding: 15px 0;
@@ -48,6 +53,7 @@ nav ul li a.active {
   background: rgba(255, 255, 255, 0.2);
 }
 
+/*Hero Section*/
 .hero {
   background: linear-gradient(to right, var(--primary), var(--secondary));
   color: var(--white);
@@ -70,6 +76,7 @@ nav ul li a.active {
   font-weight: bold;
   font-family: 'Courier New', Courier, monospace;
 }
+
 .hero-image {
   flex: 1 1 300px;
   min-width: 280px;
@@ -83,6 +90,7 @@ nav ul li a.active {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
+/*Main Content Area*/
 main {
   padding: 40px 20px;
   max-width: 1000px;
@@ -95,6 +103,7 @@ section h2 {
   margin-bottom: 20px;
 }
 
+/*Footer*/
 footer {
   text-align: center;
   padding: 20px;
@@ -102,6 +111,7 @@ footer {
   color: var(--white);
 }
 
+/*Image Slider*/
 .slider {
   position: relative;
   max-width: 600px;
@@ -127,6 +137,7 @@ footer {
   to {opacity: 1;}
 }
 
+/*Contact Form*/
 form {
   display: flex;
   flex-direction: column;
@@ -143,7 +154,8 @@ form label {
   color: var(--text);
 }
 
-form input, form textarea {
+form input,
+form textarea {
   padding: 10px;
   border: 2px solid var(--primary);
   border-radius: 5px;
@@ -171,6 +183,99 @@ form button:hover {
   color: var(--accent);
 }
 
+/*Download Button*/
+.btn-download {
+  display: inline-block;
+  margin-top: 20px;
+  background: var(--accent);
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-download:hover {
+  background: var(--secondary);
+}
+
+/*Testimonials Section*/
+.testimonials {
+  background: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/*About Section*/
+.about {
+  padding: 60px 20px;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.about-text {
+  flex: 1 1 500px;
+}
+
+.about-text h2 {
+  color: var(--primary);
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.about-text h3 {
+  margin-top: 30px;
+  color: var(--secondary);
+}
+
+.about-text p {
+  font-size: 1.05rem;
+  margin-bottom: 15px;
+}
+
+.about-text ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.about-text ul li {
+  padding: 5px 0;
+}
+
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+}
+
+.tools li {
+  background: var(--primary);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+}
+
+.about-image {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/*Responsive Styles*/
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
@@ -184,290 +289,17 @@ form button:hover {
   .hero p {
     font-size: 1rem;
   }
-  .about {
-    padding: 60px 20px;
-  }
-  
+
   .about-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    align-items: flex-start;
-    max-width: 1000px;
-    margin: auto;
-  }
-  
-  .about-text {
-    flex: 1 1 500px;
-  }
-  
-  .about-text h2 {
-    color: var(--primary);
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-  }
-  
-  .about-text h3 {
-    margin-top: 30px;
-    color: var(--secondary);
-  }
-  
-  .about-text p {
-    font-size: 1.05rem;
-    margin-bottom: 15px;
-  }
-  
-  .about-text ul {
-    list-style: none;
-    padding-left: 0;
-  }
-  
-  .about-text ul li {
-    padding: 5px 0;
-  }
-  
-  .tools {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 20px;
-  }
-  
-  .tools li {
-    background: var(--primary);
-    color: white;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.95rem;
-  }
-  
-  .about-image {
-    flex: 1 1 300px;
+    flex-direction: column;
     text-align: center;
-  }
-  
-  .about-image img {
-    max-width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  }
-  
-  /* Mobile Layout */
-  @media (max-width: 768px) {
-    .about-container {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .about-text {
-      flex: 1 1 100%;
-    }
-  
-    .about-image {
-      margin-top: 20px;
-    }
-  }
-  .btn-download {
-    display: inline-block;
-    margin-top: 20px;
-    background: var(--accent);
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background 0.3s ease;
-  }
-  
-  .btn-download:hover {
-    background: var(--secondary);
-  }
-  
-  .testimonials {
-    background: #fff;
-    padding: 60px 20px;
-    text-align: center;
-  }
-  
-  .testimonials h2 {
-    color: var(--primary);
-    font-size: 2rem;
-    margin-bottom: 30px;
-  }
-  
-  .testimonial {
-    display: none;
-    padding: 20px;
-    background: var(--bg);
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: opacity 0.5s ease;
-  }
-  
-  .testimonial.active {
-    display: block;
-    opacity: 1;
-  }
-  
-  .testimonial p {
-    font-style: italic;
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-  }
-  
-  .testimonial h4 {
-    font-weight: normal;
-    color: var(--secondary);
-  }
-  .portfolio {
-    padding: 60px 20px;
-    text-align: center;
-  }
-  
-  .portfolio-filters {
-    margin-bottom: 30px;
-  }
-  
-  .filter-btn {
-    background: var(--primary);
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    margin: 0 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .filter-btn:hover,
-  .filter-btn.active {
-    background: var(--secondary);
-  }
-  
-  /**grid in projects**/
-  .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-  }
-  
-  .portfolio-item {
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-  }
-  
-  .portfolio-item img {
-    width: 100%;
-    display: block;
-  }
-  
-  .portfolio-item h4 {
-    padding: 10px;
-    font-size: 1.1rem;
-  }
-  
-  .portfolio-item:hover {
-    transform: scale(1.02);
-  }
-  /**dark mode**/
-  :root {
-    --primary: #8b5cf6;
-    --secondary: #ec4899;
-    --accent: #fbbf24;
-    --bg: #f9fafb;
-    --text: #1f2937;
-    --card-bg: #ffffff;
-  }
-  
-  :root.dark-mode {
-    --bg: #111827;
-    --text: #f3f4f6;
-    --card-bg: #1f2937;
-    --primary: #6366f1;
-    --secondary: #f472b6;
-    --accent: #fde047;
-  }
-  
-  body {
-    background-color: var(--bg);
-    color: var(--text);
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  header,
-  footer,
-  .btn-download,
-  .portfolio-item,
-  .testimonial {
-    background-color: var(--card-bg);
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .btn-download {
-    color: var(--text);
-  }
-  
-  .filter-btn {
-    background-color: var(--card-bg);
-    color: var(--text);
-    border: 1px solid var(--primary);
-  }
-  
-  .filter-btn.active {
-    background-color: var(--primary);
-    color: white;
   }
 
-  /**contact**/
-  .contact-page {
-    max-width: 700px;
-    margin: auto;
-    padding: 40px 20px;
-    background: var(--card-bg);
-    border-radius: 8px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  .about-text {
+    flex: 1 1 100%;
   }
-  
-  .contact-page h2 {
-    color: var(--primary);
-    margin-bottom: 20px;
-  }
-  
-  .contact-info p {
-    margin: 8px 0;
-    font-size: 1rem;
-  }
-  
-  .contact-info a {
-    color: var(--primary);
-    text-decoration: none;
-  }
-  
-  .contact-info a:hover {
-    text-decoration: underline;
-  }
-  
-  .social-links {
-    margin: 20px 0;
-  }
-  
-  .social-links a {
-    display: inline-block;
-    margin-right: 15px;
-    color: var(--secondary);
-    font-weight: bold;
-    text-decoration: none;
-  }
-  
-  .social-links a:hover {
-    color: var(--primary);
-    text-decoration: underline;
-  }
-  
-  form {
-    margin-top: 30px;
+
+  .about-image {
+    margin-top: 20px;
   }
 }
-
